@@ -14,33 +14,33 @@ import { FaceSnap } from './models/face-snap.model';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
-  snap_1!: FaceSnap
-  snap_2!: FaceSnap
-  snap_3!: FaceSnap
+  faceSnaps!: FaceSnap[]
 
   ngOnInit(): void {
-    this.snap_1 = new FaceSnap(
-      'Mountains',
-      'Nature flowers under the mountains.',
-      3,
-      new Date(),
-      "assets/snaps/nature-flowers-under-the-mountains.jpg"
-    )
-
-    this.snap_2 = new FaceSnap(
-      'Seas',
-      'Relaxing under palm tree on a Seychelles beach.',
-      3,
-      new Date(),
-      "assets/snaps/palm-tree-on-a-seychelles-beach.jpg"
-    )
-
-    this.snap_3 = new FaceSnap(
-      'Forest',
-      'Magical spring forest scenery in the morning.',
-      3,
-      new Date(),
-      "assets/snaps/spring-forest-scenery.jpg"
-    )
+    this.faceSnaps = [
+      {
+        title: 'Mountains',
+        description: 'Nature flowers under the mountains.',
+        snaps: 200,
+        createdDate: new Date(),
+        imgUrl: 'assets/snaps/nature-flowers-under-the-mountains.jpg',
+        location: 'Ariège'
+      },
+      {
+        title: 'Seas',
+        description: 'Relaxing under palm tree on a Seychelles beach.',
+        snaps: 3,
+        createdDate: new Date(),
+        imgUrl: 'assets/snaps/palm-tree-on-a-seychelles-beach.jpg'
+      },
+      {
+        title: 'Forest',
+        description: 'Magical spring forest scenery in the morning.',
+        snaps: 1,
+        createdDate: new Date(),
+        imgUrl: 'assets/snaps/spring-forest-scenery.jpg',
+        location: 'Aude'
+      }
+    ]
   }
 }
