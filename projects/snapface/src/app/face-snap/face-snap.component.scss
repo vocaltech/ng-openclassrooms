@@ -1,6 +1,24 @@
 .face-snap-card {
     width: 35%;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 4px lightgray;
+    margin: 20px auto;
+    padding: 10px 30px;
+
+    h2 {
+        margin-bottom: 0;
+    }
+    
     img {
         width: 100%;
     }
+
+    p {
+        font-weight: 300;
+        font-size: 16px;
+    }
+}
+
+.snapped {
+    background-color: rgba(lightgreen, $alpha: 0.3)
 }
