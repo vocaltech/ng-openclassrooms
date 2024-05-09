@@ -1,6 +1,6 @@
 <router-outlet />
 
-<app-face-snap [faceSnap]="snap_1"></app-face-snap>
-<app-face-snap [faceSnap]="snap_2"></app-face-snap>
-<app-face-snap [faceSnap]="snap_3"></app-face-snap>
+@for (fsp of faceSnaps; track $index) {
+    <app-face-snap [faceSnap]="fsp"></app-face-snap>
+}
 
