@@ -1,10 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FaceSnap } from '../models/face-snap.model';
+import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-face-snap',
   standalone: true,
-  imports: [],
+  imports: [
+    NgClass,
+    NgStyle
+  ],
   templateUrl: './face-snap.component.html',
   styleUrl: './face-snap.component.scss'
 })
@@ -14,7 +18,14 @@ export class FaceSnapComponent implements OnInit {
   isLiked: boolean = false
   btnLikedText: string = "Like"
 
-  ngOnInit(): void {}
+  snapStyle!: object
+
+  ngOnInit(): void {
+    this.snapStyle = {
+      'margin-left':'8px', 
+      'color': 'rgb(0, ' + this.faceSnap.snaps + ' ,0)'
+    }
+  }
 
   onSnapBtnClick = () => {
     this.isLiked = !this.isLiked
