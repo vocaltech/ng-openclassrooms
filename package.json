@@ -1,9 +1,11 @@
 {
   "name": "ng-openclassrooms",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:snapface": "ng serve --project=snapface --port 4000",
+    "start:snapface-advanced": "ng serve --project=snapface-advanced --port 4100",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
