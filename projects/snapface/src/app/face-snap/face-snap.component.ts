@@ -1,18 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { FaceSnap } from '../models/face-snap.model';
-import { CurrencyPipe, DatePipe, DecimalPipe, NgClass, NgStyle, PercentPipe, UpperCasePipe } from '@angular/common';
+import { FaceSnapsService } from '../services/face-snaps.service';
+import { Router } from '@angular/router';
+import { UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-face-snap',
   standalone: true,
   imports: [
-    NgClass,
-    NgStyle,
-    UpperCasePipe,
-    DatePipe,
-    DecimalPipe,
-    PercentPipe,
-    CurrencyPipe
+    UpperCasePipe
   ],
   templateUrl: './face-snap.component.html',
   styleUrl: './face-snap.component.scss'
@@ -20,27 +16,13 @@ import { CurrencyPipe, DatePipe, DecimalPipe, NgClass, NgStyle, PercentPipe, Upp
 export class FaceSnapComponent implements OnInit {
   @Input() faceSnap!: FaceSnap
 
-  isLiked: boolean = false
-  btnLikedText: string = "Like"
+  // injections
+  #_faceSnapsService = inject(FaceSnapsService)
+  #_router: Router = inject(Router)
 
-  snapStyle!: object
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    this.snapStyle = {
-      'margin-left':'8px', 
-      'color': 'rgb(0, ' + this.faceSnap.snaps + ' ,0)'
-    }
-  }
-
-  onSnapBtnClick = () => {
-    this.isLiked = !this.isLiked
-
-    if (this.isLiked) {
-      this.btnLikedText = 'Dislike!'
-      this.faceSnap.snaps++
-    } else {
-      this.btnLikedText = 'Like!'
-      this.faceSnap.snaps--
-    }
+  onDetailBtnClick = () => {
+    this.#_router.navigateByUrl(`facesnaps/${this.faceSnap.id}`)
   }
 }
