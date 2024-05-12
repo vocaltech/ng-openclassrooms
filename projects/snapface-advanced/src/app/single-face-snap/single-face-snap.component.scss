@@ -5,8 +5,16 @@
     margin: 20px auto;
     padding: 10px 30px;
 
+    /*
     h2 {
         margin-bottom: 0;
+    }
+    */
+
+    .header {
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center;
     }
     
     img {

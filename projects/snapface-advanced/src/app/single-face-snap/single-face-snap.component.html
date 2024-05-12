@@ -1,6 +1,9 @@
 <div class="face-snap-card" [ngClass]="{ snapped: isLiked}">
-    <h2>{{ faceSnap.title | uppercase}}</h2>
-    <a routerLink="/facesnaps">Back</a>
+    <div class="header">
+        <h2>{{ faceSnap.title | uppercase}}</h2>
+        <a routerLink="/facesnaps">Back</a>
+    </div>
+
     <p>Creation date: {{ faceSnap.createdDate | date: 'medium'}}</p>
     <img [src]="faceSnap.imgUrl" [alt]="faceSnap.title" />
     <p>{{ faceSnap.description }}</p>
