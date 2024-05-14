@@ -1,0 +1,48 @@
+.form-card {
+    width: 40%;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 4px lightgray;
+    margin: 20px auto;
+    padding: 10px 30px;
+}
+
+.form-group {
+    width: 80%;
+    margin: 8px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.action-buttons {
+    width: 80%;
+    display: flex;
+    margin: 8px auto;
+    justify-content: flex-end;
+}
+
+.button-save {
+    width: 80px;
+    height: 40px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background-color: dodgerblue;
+    border: 1px solid #ddd;
+    color: white;
+    cursor: pointer;
+    font-size: large;
+}
+
+.button-save:hover {
+    background-color: royalblue;
+}
+
+.button-reset {
+    margin-right: 16px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+input, textarea {
+    width: 50%;
+}
