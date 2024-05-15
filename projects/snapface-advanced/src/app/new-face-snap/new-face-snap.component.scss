@@ -1,9 +1,26 @@
-.form-card {
+.container {
+    display: flex;
+}
+
+.form-card, .face-snap-card {
     width: 40%;
     box-sizing: border-box;
     box-shadow: 4px 4px 4px lightgray;
     margin: 20px auto;
     padding: 10px 30px;
+}
+
+.face-snap-card {
+    img {
+        width: 100%;
+    }
+    h2 {
+        margin-bottom: 0;
+    }
+    p {
+        font-weight: 300;
+        font-size: 16px;
+      }
 }
 
 .form-group {
