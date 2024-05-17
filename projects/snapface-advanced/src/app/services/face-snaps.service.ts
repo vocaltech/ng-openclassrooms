@@ -5,7 +5,7 @@ import { FaceSnap } from "../models/face-snap.model";
     providedIn: 'root'
 })
 export class FaceSnapsService {
-    #faceSnaps: FaceSnap[] = [
+  #faceSnaps: FaceSnap[] = [
         {
           id: 1,
           title: 'Mountains',
@@ -32,13 +32,13 @@ export class FaceSnapsService {
           imgUrl: 'assets/snaps/spring-forest-scenery.jpg',
           location: 'Aude'
         }
-    ]
+  ]
 
-    getAllFaceSnaps = (): FaceSnap[] => this.#faceSnaps
+  getAllFaceSnaps = (): FaceSnap[] => this.#faceSnaps
 
-    getFaceSnapById = (id: number): FaceSnap|undefined => this.#faceSnaps.find((facesnap: FaceSnap) => facesnap.id === id)
+  getFaceSnapById = (id: number): FaceSnap|undefined => this.#faceSnaps.find((facesnap: FaceSnap) => facesnap.id === id)
 
-    updateFaceSnapTotalById = (id: number, action: FaceSnapAction) => {
+  updateFaceSnapTotalById = (id: number, action: FaceSnapAction) => {
       const faceSnap = this.getFaceSnapById(id)
 
       if (faceSnap) { // facesnap is defined
@@ -54,7 +54,23 @@ export class FaceSnapsService {
           }
         }
       }
+  }
+
+  createNewFaceSnap = (formValues: { title: string, description: string, imgUrl: string, location?: string}): void => {
+    // get last id
+    let lastId = this.#faceSnaps[this.#faceSnaps.length - 1].id
+
+    // create new faceSnap 
+    const newFaceSnap: FaceSnap = {
+      ...formValues,
+      id: ++lastId,
+      snaps: 0,
+      createdDate: new Date()
     }
+
+    // Add to current faceSnaps array
+    this.#faceSnaps.push(newFaceSnap)
+  }
 }
 
 export enum FaceSnapAction {
