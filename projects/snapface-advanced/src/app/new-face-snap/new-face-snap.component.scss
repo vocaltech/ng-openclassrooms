@@ -46,12 +46,18 @@
     background-color: dodgerblue;
     border: 1px solid #ddd;
     color: white;
-    cursor: pointer;
     font-size: large;
-}
 
-.button-save:hover {
-    background-color: royalblue;
+    &[disabled] {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    &:hover, &:active {
+        &:not([disabled]) {
+          background-color: royalblue;
+        }
+    }
 }
 
 .button-reset {
