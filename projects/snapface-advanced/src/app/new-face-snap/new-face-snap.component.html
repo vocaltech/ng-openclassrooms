@@ -21,7 +21,7 @@
             </div>
             <div class="action-buttons">
                 <button type="reset" class="button-reset">Reset</button>
-                <button type="submit" class="button-save" (click)="onSubmitForm()">Save</button>
+                <button type="submit" class="button-save" (click)="onSubmitForm()" [disabled]="snapForm.invalid">Save</button>
             </div>
         </form>
     </div>
@@ -38,6 +38,3 @@
         </div>
     }
 </div>
-
-
-
