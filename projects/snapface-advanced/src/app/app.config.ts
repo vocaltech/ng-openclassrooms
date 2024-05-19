@@ -12,7 +12,9 @@ export const appConfig: ApplicationConfig = {
       provide: LOCALE_ID,
       useValue: 'fr_FR'
     },
-    //provideHttpClient(withInterceptors([authInterceptor]))
-    provideHttpClient()
+    //provideHttpClient()
+    provideHttpClient(withInterceptors([
+      authInterceptor
+    ]))
   ]
 };
