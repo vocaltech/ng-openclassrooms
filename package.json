@@ -6,6 +6,7 @@
     "start": "ng serve",
     "start:snapface": "ng serve --project=snapface --port 4000",
     "start:snapface-advanced": "ng serve --project=snapface-advanced --port 4100",
+    "start:snapface-advanced-proxy": "ng serve --proxy-config proxy.conf.json --project=snapface-advanced --port 4100",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
