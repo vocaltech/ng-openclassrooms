@@ -10,9 +10,14 @@ export class FaceSnapsService {
   #_http = inject(HttpClient)
   #faceSnaps: FaceSnap[] = []
 
-  getAllFaceSnaps = (): Observable<FaceSnap[]> => this.#_http.get<FaceSnap[]>('http://localhost:3001/facesnaps')
+  #URL = 'http://localhost:3001/facesnaps'
+  #URL_PROXY = '/api/facesnaps'
 
-  getFaceSnapById = (id: number): Observable<FaceSnap> => this.#_http.get<FaceSnap>(`http://localhost:3001/facesnaps/${id}`)
+  //getAllFaceSnaps = (): Observable<FaceSnap[]> => this.#_http.get<FaceSnap[]>(this.#URL)
+  getAllFaceSnaps = (): Observable<FaceSnap[]> => this.#_http.get<FaceSnap[]>(this.#URL_PROXY)
+
+  //getFaceSnapById = (id: number): Observable<FaceSnap> => this.#_http.get<FaceSnap>(`${this.#URL}/${id}`)
+  getFaceSnapById = (id: number): Observable<FaceSnap> => this.#_http.get<FaceSnap>(`${this.#URL_PROXY}/${id}`)
 
   updateFaceSnapTotalById = (id: number, action: FaceSnapAction): Observable<FaceSnap> => {
       return this.getFaceSnapById(id).pipe(
@@ -20,7 +25,8 @@ export class FaceSnapsService {
           ...facesnap,
           snaps: facesnap.snaps + (action === FaceSnapAction.SNAP ? 1: -1)
         })),
-        switchMap(updatedFaceSnap => this.#_http.put<FaceSnap>(`http://localhost:3001/facesnaps/${id}`, updatedFaceSnap))
+        //switchMap(updatedFaceSnap => this.#_http.put<FaceSnap>(`${this.#URL}/${id}`, updatedFaceSnap))
+        switchMap(updatedFaceSnap => this.#_http.put<FaceSnap>(`${this.#URL_PROXY}/${id}`, updatedFaceSnap))
       )
   }
 
@@ -34,7 +40,8 @@ export class FaceSnapsService {
         snaps: 0,
         createdDate: new Date()
       })),
-      switchMap(newFaceSnap => this.#_http.post<FaceSnap>('http://localhost:3001/facesnaps', newFaceSnap))
+      //switchMap(newFaceSnap => this.#_http.post<FaceSnap>(this.#URL, newFaceSnap))
+      switchMap(newFaceSnap => this.#_http.post<FaceSnap>(this.#URL_PROXY, newFaceSnap))
     )
   }
 }
