@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
-import { HeaderComponent } from './header/header.component';
+import { CoreModule } from './core/core.module';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     RouterOutlet,
     FaceSnapListComponent,
-    HeaderComponent
+    CoreModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
