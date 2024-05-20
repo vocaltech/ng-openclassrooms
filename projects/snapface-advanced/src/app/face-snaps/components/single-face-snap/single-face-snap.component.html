@@ -1,0 +1,22 @@
+@if (faceSnap$ | async; as faceSnap) {
+    <div class="face-snap-card" [ngClass]="{ snapped: isLiked}">
+        <div class="header">
+            <h2>{{ faceSnap.title | uppercase}}</h2>
+            <a routerLink="/facesnaps">Back</a>
+        </div>
+    
+        <p>Creation date: {{ faceSnap.createdDate }}</p>
+        <img [src]="faceSnap.imgUrl" [alt]="faceSnap.title" />
+        <p>{{ faceSnap.description }}</p>
+        @if (faceSnap.location) {
+            <p>Location: {{ faceSnap.location }}</p>
+        }
+        <p>
+            <button (click)="onSnapBtnClick(faceSnap.id)">{{ btnLikedText }}</button>
+            <span [ngStyle]="snapStyle(faceSnap.snaps)">👍 {{ faceSnap.snaps }}</span>
+        </p>
+    </div>
+}
+
+
+
