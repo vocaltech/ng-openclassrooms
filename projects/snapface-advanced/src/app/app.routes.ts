@@ -8,5 +8,5 @@ export const routes: Routes = [
     { path: '', component: LandingPageComponent },
     { path: 'facesnaps', component: FaceSnapListComponent },
     { path: 'facesnaps/:id', component: SingleFaceSnapComponent },
-    { path: 'create_facesnap', component: NewFaceSnapComponent }
+    { path: 'create', component: NewFaceSnapComponent }
 ];

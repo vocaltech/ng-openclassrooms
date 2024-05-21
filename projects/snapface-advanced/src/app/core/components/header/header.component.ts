@@ -15,6 +15,6 @@ export class HeaderComponent {
   #_router = inject(Router)
 
   onAddNewFaceSnap(): void {
-    this.#_router.navigateByUrl('create_facesnap')
+    this.#_router.navigateByUrl('create')
   }
 }
