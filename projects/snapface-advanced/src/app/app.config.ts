@@ -11,7 +11,6 @@ export const appConfig: ApplicationConfig = {
       provide: LOCALE_ID,
       useValue: 'fr_FR'
     },
-    //provideHttpClient()
     provideHttpClient(withInterceptors([
       authInterceptor
     ]))
