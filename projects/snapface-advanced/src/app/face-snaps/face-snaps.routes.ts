@@ -5,6 +5,6 @@ import { NewFaceSnapComponent } from "./components/new-face-snap/new-face-snap.c
 
 export const routes: Routes = [
     { path: '', component: FaceSnapListComponent },
-    { path: ':id', component: SingleFaceSnapComponent },
-    { path: 'create', component: NewFaceSnapComponent }
+    { path: 'create', component: NewFaceSnapComponent },
+    { path: ':id', component: SingleFaceSnapComponent }
 ];
