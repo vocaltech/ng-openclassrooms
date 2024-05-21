@@ -4,6 +4,8 @@ import { FaceSnapComponent } from './components/face-snap/face-snap.component';
 import { FaceSnapListComponent } from './components/face-snap-list/face-snap-list.component';
 import { NewFaceSnapComponent } from './components/new-face-snap/new-face-snap.component';
 import { SingleFaceSnapComponent } from './components/single-face-snap/single-face-snap.component';
+import { provideRouter } from '@angular/router';
+import { routes } from './face-snaps.routes'
 
 
 @NgModule({
@@ -14,6 +16,9 @@ import { SingleFaceSnapComponent } from './components/single-face-snap/single-fa
     FaceSnapListComponent,
     NewFaceSnapComponent,
     SingleFaceSnapComponent
+  ],
+  providers: [
+    provideRouter(routes)
   ]
 })
 export class FaceSnapsModule { }
