@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { provideRouter } from '@angular/router';
-import { routes } from './auth.routes';
+
 import { LoginComponent } from './components/login/login.component';
+import { provideRouter } from '@angular/router';
+import { loginRoutes } from './auth.routes';
 
 @NgModule({
   declarations: [],
@@ -10,8 +11,8 @@ import { LoginComponent } from './components/login/login.component';
     CommonModule,
     LoginComponent
   ],
-  providers: [
-    provideRouter(routes)
+  providers:  [
+    provideRouter(loginRoutes)
   ]
 })
 export class AuthModule { }
