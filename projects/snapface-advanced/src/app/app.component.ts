@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CoreModule } from './core/core.module';
 import { FaceSnapsModule } from './face-snaps/face-snaps.module';
+import { AuthModule } from './auth/auth.module';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,8 @@ import { FaceSnapsModule } from './face-snaps/face-snaps.module';
   imports: [
     RouterOutlet,
     CoreModule,
-    FaceSnapsModule
+    FaceSnapsModule,
+    AuthModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
